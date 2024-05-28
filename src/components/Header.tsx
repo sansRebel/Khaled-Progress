@@ -56,6 +56,12 @@ const Header = () => {
           <Link as={NextLink} href="/checkout">
             <Button variant="ghost" colorScheme="whiteAlpha">Checkout</Button>
           </Link>
+          <Link as={NextLink} href="/login">
+            <Button variant="ghost" colorScheme="whiteAlpha">Login</Button>
+          </Link>
+          <Link as={NextLink} href="/register">
+            <Button variant="ghost" colorScheme="whiteAlpha">Register</Button>
+          </Link>
         </HStack>
       </Flex>
     </Box>

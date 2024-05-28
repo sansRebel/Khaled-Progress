@@ -1,0 +1,16 @@
+
+[
+    {
+      "id": 1,
+      "email": "manager@example.com",
+      "password": "manager123",
+      "type": "manager"
+    },
+    {
+      "id": 2,
+      "email": "customer@example.com",
+      "password": "customer123",
+      "type": "customer"
+    }
+  ]
+  
