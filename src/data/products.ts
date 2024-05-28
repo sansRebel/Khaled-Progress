@@ -1,5 +1,7 @@
+import {Product} from '../context/CartContext'
 
-const products = [
+
+const products: Product[] = [
     {
       id: 1,
       name: 'Pepsi',

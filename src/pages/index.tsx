@@ -1,4 +1,3 @@
-// src/pages/index.tsx
 import { Box, Grid, Image, Heading, Text, Button, Flex, Badge } from '@chakra-ui/react';
 import products from '../data/products';
 import { useCart } from '../context/CartContext';
@@ -10,10 +9,10 @@ export default function Home() {
     <Box p={5} bg="gray.50">
       <Box textAlign="center" mb={10}>
         <Heading as="h1" size="2xl" mb={4} color="brand.600" fontWeight="bold">
-          Soda Store
+          Welcome to Our Store
         </Heading>
         <Text fontSize="lg" color="gray.600">
-          Discover our products
+          Discover our exclusive collection of products
         </Text>
       </Box>
       <Grid templateColumns={{ base: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }} gap={8}>
