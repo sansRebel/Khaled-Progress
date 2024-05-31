@@ -1,18 +1,34 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { Box, Button, Input, VStack, Heading, FormControl, FormLabel, Text } from '@chakra-ui/react';
+import axios from 'axios';
 
 const RegisterPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [userType, setUserType] = useState<'customer' | 'manager'>('customer');
+  const [error, setError] = useState('');
   const router = useRouter();
 
-  const handleRegister = (event: React.FormEvent) => {
+  const handleRegister = async (event: React.FormEvent) => {
     event.preventDefault();
-    // Currently accepting any credentials
-    console.log('Registering with', email, password);
-    router.push('/');
+
+    if (password !== confirmPassword) {
+      setError('Passwords do not match bravv');
+      return;
+    }
+
+    try {
+      const res = await axios.post('/api/api?type=add-user', { email, password, type: userType });
+      if (res.status === 201) {
+        router.push('/login');
+      } else {
+        setError('An error occurred. Please try again.');
+      }
+    } catch (error) {
+      setError('An error occurred. Please try again.');
+    }
   };
 
   return (
@@ -22,6 +38,7 @@ const RegisterPage = () => {
       </Heading>
       <form onSubmit={handleRegister}>
         <VStack spacing={4}>
+          {error && <Text color="red.500">{error}</Text>}
           <FormControl id="email">
             <FormLabel>Email</FormLabel>
             <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />

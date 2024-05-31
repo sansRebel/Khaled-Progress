@@ -1,16 +1,37 @@
-
 [
-    {
-      "id": 1,
-      "email": "manager@example.com",
-      "password": "manager123",
-      "type": "manager"
-    },
-    {
-      "id": 2,
-      "email": "customer@example.com",
-      "password": "customer123",
-      "type": "customer"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "email": "manager@example.com",
+    "password": "manager123",
+    "type": "manager"
+  },
+  {
+    "id": 2,
+    "email": "customer@example.com",
+    "password": "customer123",
+    "type": "customer"
+  },
+  {
+    "id": 3,
+    "email": "sansi@example.com",
+    "password": "sans123"
+  },
+  {
+    "id": 4,
+    "email": "lalo@example.com",
+    "password": "lalo123",
+    "type": "customer"
+  },
+  {
+    "id": 5,
+    "email": "jojo@gmail.com",
+    "password": "jojo123",
+    "type": "customer"
+  },
+  {
+    "id": 6,
+    "email": "bo@gmail.com",
+    "password": "bo123",
+    "type": "customer"
+  }
+]

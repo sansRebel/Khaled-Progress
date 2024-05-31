@@ -11,14 +11,17 @@ const LoginPage = () => {
 
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault();
-    try {
-      const response = await axios.post('/api/api', { email, password });
-      const { user } = response.data;
 
-      if (user.type === 'manager') {
-        router.push('/manager');
+    try {
+      const res = await axios.post('/api/api?type=auth-user', { email, password });
+      if (res.status === 200) {
+        if (res.data.type === 'manager') {
+          router.push('/manager');
+        } else {
+          router.push('/');
+        }
       } else {
-        router.push('/');
+        setError('Invalid email or password');
       }
     } catch (error) {
       setError('Invalid email or password');

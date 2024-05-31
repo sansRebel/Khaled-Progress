@@ -1,4 +1,4 @@
-import { Flex, Link, Spacer, Button, Box, Heading, HStack, Input, InputGroup, InputLeftElement, IconButton } from '@chakra-ui/react';
+import { Flex, Link, Spacer, Box, Heading, HStack, Input, InputGroup, InputLeftElement, IconButton, Text, VStack, Image } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { SearchIcon } from '@chakra-ui/icons';
 import { useState } from 'react';
@@ -46,21 +46,66 @@ const Header = () => {
           </InputGroup>
         </form>
         <Spacer />
-        <HStack spacing={4}>
-          <Link as={NextLink} href="/">
-            <Button variant="ghost" colorScheme="whiteAlpha">Home</Button>
+        <HStack spacing={8}> {/* Adjust spacing */}
+          <Link as={NextLink} href="/" display="block">
+            <VStack>
+              <IconButton
+                aria-label="Home"
+                icon={<Image src="/images/home.svg" alt="Home" boxSize="24px" />}
+                variant="ghost"
+                colorScheme="whiteAlpha"
+                _hover={{ bg: 'brand.600' }}
+              />
+              <Text>Home</Text>
+            </VStack>
           </Link>
-          <Link as={NextLink} href="/cart">
-            <Button variant="ghost" colorScheme="whiteAlpha">Cart</Button>
+          <Link as={NextLink} href="/cart" display="block">
+            <VStack>
+              <IconButton
+                aria-label="Cart"
+                icon={<Image src="/images/cart.svg" alt="Cart" boxSize="24px" />}
+                variant="ghost"
+                colorScheme="whiteAlpha"
+                _hover={{ bg: 'brand.600' }}
+              />
+              <Text>Cart</Text>
+            </VStack>
           </Link>
-          <Link as={NextLink} href="/checkout">
-            <Button variant="ghost" colorScheme="whiteAlpha">Checkout</Button>
+          <Link as={NextLink} href="/checkout" display="block">
+            <VStack>
+              <IconButton
+                aria-label="Checkout"
+                icon={<Image src="/images/checkout.svg" alt="Checkout" boxSize="24px" />}
+                variant="ghost"
+                colorScheme="whiteAlpha"
+                _hover={{ bg: 'brand.600' }}
+              />
+              <Text>Checkout</Text>
+            </VStack>
           </Link>
-          <Link as={NextLink} href="/login">
-            <Button variant="ghost" colorScheme="whiteAlpha">Login</Button>
+          <Link as={NextLink} href="/login" display="block">
+            <VStack>
+              <IconButton
+                aria-label="Login"
+                icon={<Image src="/images/login.svg" alt="Login" boxSize="24px" />}
+                variant="ghost"
+                colorScheme="whiteAlpha"
+                _hover={{ bg: 'brand.600' }}
+              />
+              <Text>Login</Text>
+            </VStack>
           </Link>
-          <Link as={NextLink} href="/register">
-            <Button variant="ghost" colorScheme="whiteAlpha">Register</Button>
+          <Link as={NextLink} href="/register" display="block">
+            <VStack>
+              <IconButton
+                aria-label="Register"
+                icon={<Image src="/images/register.svg" alt="Register" boxSize="24px" />}
+                variant="ghost"
+                colorScheme="whiteAlpha"
+                _hover={{ bg: 'brand.600' }}
+              />
+              <Text>Register</Text>
+            </VStack>
           </Link>
         </HStack>
       </Flex>
